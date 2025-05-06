@@ -1,27 +1,30 @@
 # Check Temperature
-  This will guide you to setup the bot function script, Create the systemd service and troubleshooting. Things here are done by bash on a cmd by connecting rpi to computer via ssh. You can use GUI to to this too.
+  This guide explains how to set up the temperature-checking function of your Raspberry Pi Telegram Bot. All commands are intended to be run via **SSH**. If you're using the Raspberry Pi GUI, you can follow the same steps in a terminal window.
 
-### 1. Set up the Bot Function
+### 1️⃣ Set up the temperature-checking Script
 Create file temp.py in the bot directory.  
-  
-`nano ~/telegram_bot/temp.py`  
+
+```bash
+nano ~/telegram_bot/temp.py
+```
   
 and paste the given code in temp.py in it.  
   
   
 Now make the file executable using,  
-  
-`chmod +x ~/telegram_bot/temp.py`  
-  
+  ```bash
+chmod +x ~/telegram_bot/temp.py  
+  ```
 
-### 2. Create a Service  
+### 2️⃣ Create a Service  
 Create a systemd service file.  
-  
-`sudo nano /etc/systemd/system/temp.service`  
-  
-then paste the content in temp.service to it.  
-
->MAKE SURE YOU CHANGE User=pi TO YOUR USERNAME AND CHANGE THE PATHS IN THE FILE TO SAME USERNAME USED. Also change bot_token to the token mentioned in prerequisities.
+  ```bash
+sudo nano /etc/systemd/system/temp.service
+ ``` 
+Paste the contents of your temp.service file. Important:  
+- Replace User=pi with your actual Raspberry Pi username.  
+- Update all paths to match your username and directory structure.  
+- Replace the placeholder bot_token with your actual Telegram bot token (see [Prerequisites](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/prerequisites.md#1-create-a-telegram-bot)).  
   
 Save the file and Exit.  
 
@@ -31,15 +34,16 @@ Now the service can be enabled and started.
     sudo systemctl enable temp.service
     sudo systemctl start temp.service 
       
-Run these commands seperately and you're good to go.  
+⚠️ Run each command separately. 
 
-### 3. Testing the Bot
+### 3️⃣ Testing the Bot
 Start your bot in Telegram by `/start`.    
-You can,  
-        1.Check Temperature by /temp  
-        2.Get Help by /help (You can change what is shown by this command from the code)  
+Available commands:
+- /temp — Get the current temperature of your Raspberry Pi.
+- /help — View the list of available commands (you can customize this message in your script).
 
-You can check if the service is running properly from the cmd too.  
-`sudo systemctl status rpi-temp-bot.service`  
-
+If the bot isn't responding, this command will help identify issues.   
+```bash
+sudo systemctl status rpi-temp-bot.service
+```
 
