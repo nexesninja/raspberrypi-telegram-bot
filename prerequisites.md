@@ -1,59 +1,78 @@
-### 1. Create a Telegram Bot  
+# ✅ Prerequisites
+  Before running the Telegram Bot on your Raspberry Pi 5, make sure you complete the following steps.
 
-Go to Telegram and search for `BotFather`.  
-Start the bot by `/start` and send the command `/newbot`.  
-Then provide a Name and username for the bot as instructed.  
-Finally,save the bot_token given by BotFather. We need it later.  
+## 1️⃣ Create a Telegram Bot  
 
-### 2. Connecting rpi via SSH  
-  >This step is not necessary if you select GUI. You can find Youtube tutorials on this step.
+1. Open **Telegram** and search for `@BotFather`.
+2. Start the bot by `/start` and send the command `/newbot`.  
+3. Follow the prompts to:
+  - Give your bot a **name**.
+  - Choose a **unique username** (must end in `bot`).  
+4. After setup, save the bot_token given by BotFather. You'll need this token to connect your bot to rpi.
+
+## 2️⃣ Connect rpi via SSH  
+> ⚠️ You can skip this section if you're using a display + keyboard (GUI mode).  
+> For beginners, YouTube tutorials can help guide you through this step.
 
   I have identified there are two ways of doing this in the internet. 
-  But I will use the less complex way.
+  But I will use the less complex way using **Raspberry Pi Imager**.
+
+### 🖥️ Raspberry Pi Imager Setup
+1. Download and install [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
+
+2. Open the Imager and:
+  - Select your Pi model and OS
+  - Select the SD card.
+  - Click **Next** and then **Edit Settings**.
+
+3. In the dialog box opened:
+- Set a **hostname**, **username**, and **password**.
+- Enter your **Wi-Fi SSID** and **password**.
+- Head to **Services**, **Enable SSH** and choose "Use password authentication".
+- Continue the setup and write the image to SD Card. 
+
+### 🔌 Find IP Address
+  1. Insert the SD card into your Raspberry Pi and power it on.  
+  It will be automatically connected to the WLAN.  
+  2. Make sure your **computer is connected to the same Wi-Fi network**.
+  3. Find the Pi’s IP address using one of these:
+  -   📱 **Fing app** (mobile)
+  -   🖥️ **Nmap** (desktop)
+  -   🖥️ Use command 'ping [hostname].local (Change [hostname] with hostname you gave)  
+     Any other method preferred can be used.
   
-  First you need to [download](https://www.raspberrypi.com/software/) and install Raspberry Pi Imager.  
-    
-  Open the Imager and select your pi version, os and the device and click next.  
-  In the dialog box appears, select `Edit Settings`.  
+### 🔐 SSH into Your Raspberry Pi
+ 1. Use the following command to connect:
+```bash
+  ssh [username]@[ipaddress]
+```  
+  Replace:
+-   [username] → The username you set in Raspberry Pi Imager
+-   [ip_address] → The IP you found above  
 
-  Here, you should provide hostname, username and password wireless LAN Info.  
-  Then head to services, Enable SSH and choose Use password authentication.
-  Then you can continue the setup.  
-
-  Now, after you intert your SD card into rpi and turned it on, it will be automatically connected to the WLAN.  
-  Connect your computer to same WLAN and open command prompt.  
-
-  To continue you have to know the IP Address of rpi. For that, you can use Fing on mobile or NMap from the desktop.  
-
-  Now you can you following command to use the terminal of rpi.  
-  ```ssh [username]@[ipaddress]```  
-
-  Change [username] to username you gave in the setup and  [ipaddress] to the IP Address of rpi.  
-
-  You will be asked for confirmation, type yes and click enter.
+  Type yes for confirmation.
   
   
-### 3. Setup a Virtual Environment
-
-To install required packages,  
-  ```
+## 3️⃣ Setup a Virtual Environment
+Once you're logged into your Pi:
+### 🔄 Update and Install Python venv
+```bash
 sudo apt update
 sudo apt install python3-venv
 ```
 
-Create a directory for Bot by,
-```
+### 📁 Create thr Bot Directory
+```bash
 mkdir -p ~/telegram_bot
 ```
-Create the Virtual Environment by,
-```
+### 🧪 Set Up the Virtual Environment
+```bash
 python3 -m venv ~/telegram_bot/venv
-```
-Then activate it by,
-```
 source ~/telegram_bot/venv/bin/activate
 ```
-Install required packages by,
-```
+### 📦 Install Required Packages
+```bash
 pip install python-telegram-bot
 ```
+  
+You're now ready to start building your Telegram bot!
