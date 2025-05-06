@@ -24,7 +24,7 @@ sudo nano /etc/systemd/system/temp.service
 Paste the contents of your temp.service file. Important:  
 - Replace User=pi with your actual Raspberry Pi username.  
 - Update all paths to match your username and directory structure.  
-- Replace the placeholder bot_token with your actual Telegram bot token (see [Prerequisites](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/prerequisites.md#1-create-a-telegram-bot)).  
+- Replace the placeholder bot_token with your actual Telegram bot token (see [Prerequisites](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/docs/prerequisites.md)).  
   
 Save the file and Exit.  
 
