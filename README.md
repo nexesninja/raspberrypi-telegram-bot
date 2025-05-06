@@ -13,11 +13,11 @@ I’m using SSH to connect to my RPi from a computer (no display required).
 
 Before continuing, please complete the the prerequisites:
 
-- [Create a Telegram Bot](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/prerequisites.md#1-create-a-telegram-bot)
-- [Connect to Raspberry Pi via SSH](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/prerequisites.md#2-connecting-rpi-via-ssh)
-- [Set up a Python Virtual Environment](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/prerequisites.md#3-setup-a-virtual-environment)
+- [Create a Telegram Bot](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/docs/prerequisites.md#1%EF%B8%8F%E2%83%A3-create-a-telegram-bot)
+- [Connect to Raspberry Pi via SSH](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/docs/prerequisites.md#2%EF%B8%8F%E2%83%A3-connect-rpi-via-ssh)
+- [Set up a Python Virtual Environment](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/docs/prerequisites.md#3%EF%B8%8F%E2%83%A3-setup-a-virtual-environment)
 
-👉 The complete file can be found from [here](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/prerequisites.md).
+👉 The complete file can be found from [here](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/docs/prerequisites.md).
 
 ## 📁 Project Modules
 
