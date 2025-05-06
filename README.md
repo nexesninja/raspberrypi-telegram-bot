@@ -1,24 +1,47 @@
-# rpi-telegram-bot
+# Raspberry Pi 5 Telegram Bot
 
-I'm going to build a fully functional telegram bot for raspberry pi 5 (rpi) with features,  
+A fully functional Telegram bot for Raspberry Pi 5 (rpi) with features like:
 
-  1. Temperature Checking  
-  2. System Monitoring  
-  3. Command rpi 
-	And more features will be added.
+- 🌡️ Temperature Monitoring  
+- 📊 System Monitoring  
+- 💻 Remote Command Execution  
+- 🔧 More features coming soon!
 
-Here I'm using ssh to connect rpi to my computer since I don't have proper Display for rpi.  
+I’m using SSH to connect to my RPi from a computer (no display required).
 
-# Guide for the Project
- 1. First you need to complete [Prerequisites](prerequisites). This includes  
-		- [Create a Telegram Bot](Create a Telegram Bot)  
-		- Connecting rpi via SSH  
-		- Setup a Virtual Environment
-      
- Now you can continue from each projects below.  
-   
+## 🚀 Getting Started
 
-# Check Temperature
-Here's the guide to setup Temperature Function.  
+Before continuing, please complete the the prerequisites:
 
+- [Create a Telegram Bot](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/prerequisites.md#1-create-a-telegram-bot)
+- [Connect to Raspberry Pi via SSH](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/prerequisites.md#2-connecting-rpi-via-ssh)
+- [Set up a Python Virtual Environment](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/prerequisites.md#3-setup-a-virtual-environment)
 
+👉 The complete file can be found from [here](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/prerequisites.md).
+
+## 📁 Project Modules
+
+### 🌡️ Temperature Monitoring
+
+This module allows you to check the RPi's temperature using the Telegram bot.
+
+## 🗂️ Commands
+
+| Command | Description                        |
+|---------|------------------------------------|
+| `/temp` | Check Raspberry Pi temperature     |
+| `/help`  | Help message with Available Commands |
+
+More features coming soon!
+
+### 📌 Roadmap
+
+Before continuing, please complete the following:
+
+- [x] Temperature Monitoring
+- [ ]  CPU & Memory Usage Display
+- [ ] Run Custom Shell Commands
+
+## 📝 License
+
+This project is licensed under the MIT License.
