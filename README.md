@@ -23,7 +23,7 @@ Before continuing, please complete the the prerequisites:
 
 ### 🌡️ Temperature Monitoring
 
-This module allows you to check the RPi's temperature using the Telegram bot.
+This module allows you to check the RPi's temperature using the Telegram bot. Access full document at [doc_temp](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/docs/doc_temp.md#check-temperature).
 
 ## 🗂️ Commands
 
