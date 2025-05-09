@@ -7,7 +7,7 @@ A fully functional Telegram bot for Raspberry Pi 5 (rpi) with features like:
 - 💻 Remote Command Execution  
 - 🔧 More features coming soon!
 
-I’m using SSH to connect to my RPi from a computer (no display required).
+I’m using SSH to connect to my rpi from a computer (no display required).
 
 ## 🚀 Getting Started
 
@@ -34,14 +34,20 @@ This module allows you to check the RPi's temperature using the Telegram bot.
 
 More features coming soon!
 
-### 📌 Roadmap
+## 📌 Roadmap
 
-Before continuing, please complete the following:
 
 - [x] Temperature Monitoring
 - [ ]  CPU & Memory Usage Display
 - [ ] Run Custom Shell Commands
 
-## 📝 License
 
-This project is licensed under the MIT License.
+
+<hr>
+
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/nexesninja/raspberrypi-telegram-bot)
+![Platform](https://img.shields.io/badge/platform-Raspberry%20Pi-ff69b4)
+![License](https://img.shields.io/github/license/nexesninja/raspberrypi-telegram-bot)
+
+
+
