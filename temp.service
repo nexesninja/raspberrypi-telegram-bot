@@ -1,13 +1,17 @@
 [Unit]
-Description=rpi Telegram Temperature Monitor
-After=network.target
+Description=Raspberry Pi Telegram Temperature Monitor
+After=network-online.target
+Wants=network-online.target
 
 [Service]
+Type=simple
+ExecStartPre=/bin/sleep 30
 ExecStart=/home/pi/telegram_bot/venv/bin/python /home/pi/telegram_bot/temp.py
 WorkingDirectory=/home/pi/telegram_bot
 StandardOutput=inherit
 StandardError=inherit
-Restart=always
+Restart=on-failure
+RestartSec=60
 User=pi
 Environment=TELEGRAM_BOT_TOKEN=bot_token
 
