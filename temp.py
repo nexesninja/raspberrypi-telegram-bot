@@ -3,13 +3,17 @@
 import logging
 import os
 import time
+import sys
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
 # Enable logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO
+    level=logging.INFO,
+    handlers=[
+        logging.StreamHandler(sys.stdout)
+    ]
 )
 logger = logging.getLogger(__name__)
 
@@ -49,24 +53,51 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     )
 
 def main() -> None:
-    """Start the bot."""
+    """Start the bot with a retry mechanism."""
     # Get API token from environment variable
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     if not token:
         logger.error("No token provided. Set the TELEGRAM_BOT_TOKEN environment variable.")
         return
 
-    # Create the Application
-    application = Application.builder().token(token).build()
+    retry_count = 0
+    max_retries = 10
+    wait_time = 30  # seconds
+    
+    # Start with a delay to ensure network is ready
+    logger.info(f"Starting with an initial delay of {wait_time} seconds...")
+    time.sleep(wait_time)
+    
+    while retry_count < max_retries:
+        try:
+            logger.info(f"Attempting to start bot (attempt {retry_count + 1}/{max_retries})")
+            
+            # Create the Application
+            application = Application.builder().token(token).build()
 
-    # Add command handlers
-    application.add_handler(CommandHandler("start", start))
-    application.add_handler(CommandHandler("help", help_command))
-    application.add_handler(CommandHandler("temp", temp_command))
+            # Add command handlers
+            application.add_handler(CommandHandler("start", start))
+            application.add_handler(CommandHandler("help", help_command))
+            application.add_handler(CommandHandler("temp", temp_command))
 
-    # Start the Bot
-    application.run_polling()
-    logger.info("Bot started")
+            # Start the Bot - this will block until Ctrl+C is pressed
+            logger.info("Bot starting...")
+            application.run_polling()
+            
+            # If we get here after polling stops, break the retry loop
+            break
+            
+        except Exception as e:
+            retry_count += 1
+            logger.error(f"Failed to start bot: {e}")
+            
+            if retry_count < max_retries:
+                logger.info(f"Waiting {wait_time} seconds before retrying...")
+                time.sleep(wait_time)
+            else:
+                logger.error(f"Failed to start bot after {max_retries} attempts")
+                break
 
 if __name__ == '__main__':
+    logger.info("Starting Telegram temperature bot with retry mechanism")
     main()
