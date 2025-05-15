@@ -1,4 +1,9 @@
-# Raspberry Pi 5 Telegram Bot
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f2a5bb8a-992e-4e36-bb33-90855adc7dd3" />
+</p>
+
+
+<h1 align="center">Raspberry Pi 5 Telegram Bot</h1>
 
 A fully functional Telegram bot for Raspberry Pi 5 (rpi) with features like:
 
