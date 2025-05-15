@@ -3,9 +3,9 @@
 </p>
 
 
-<h1 align="center">Raspberry Pi 5 Telegram Bot</h1>
+<h1 align="center">Raspberry Pi Telegram Bot</h1>
 
-A fully functional Telegram bot for Raspberry Pi 5 (rpi) with features like:
+A fully functional Telegram bot for Raspberry Pi (rpi) with features like:
 
 - 🌡️ Temperature Monitoring  
 - 📊 System Monitoring  
