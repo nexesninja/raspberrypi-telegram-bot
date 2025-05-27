@@ -44,6 +44,6 @@ Available commands:
 
 If the bot isn't responding, this command will help identify issues.   
 ```bash
-sudo systemctl status rpi-temp-bot.service
+sudo systemctl status temp.service
 ```
 
