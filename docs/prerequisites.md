@@ -63,16 +63,18 @@ sudo apt install python3-venv
 
 ### 📁 Create thr Bot Directory
 ```bash
-mkdir -p ~/telegram_bot
+mkdir -p ~/pi_telegram_bot
 ```
 ### 🧪 Set Up the Virtual Environment
 ```bash
-python3 -m venv ~/telegram_bot/venv
-source ~/telegram_bot/venv/bin/activate
+python3 -m venv ~/pi_telegram_bot/venv
+source ~/pi_telegram_bot/venv/bin/activate
 ```
 ### 📦 Install Required Packages
 ```bash
-pip install python-telegram-bot
+pip install --upgrade pip
+pip install -r requirements.txt
 ```
+
   
 You're now ready to start building your Telegram bot!
