@@ -1,0 +1,18 @@
+[Unit]
+Description=Raspberry Pi Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/pi_telegram_bot
+Environment=PATH=/home/pi/pi_telegram_bot/venv/bin
+ExecStart=/home/pi/pi_telegram_bot/venv/bin/python main.py
+Restart=always
+RestartSec=30
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=pi-telegram-bot
+
+[Install]
+WantedBy=multi-user.target
