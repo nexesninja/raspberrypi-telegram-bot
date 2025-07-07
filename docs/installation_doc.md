@@ -47,7 +47,7 @@ If successful, you should see "Bot started successfully!" in the logs.
 
 ## Create Systemd Service
 
-Create the `pi_telegram_bot.service` in the directory as given below.
+Create the `pi_telegram_bot.service` in the directory as given below. Add the content from `pi-telegram-bot.service` to the file. Replace user `pi` with your username.
 ```bash
 sudo nano /etc/systemd/system/pi-telegram-bot.service
 ```
