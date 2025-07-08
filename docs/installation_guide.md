@@ -9,9 +9,9 @@ mkdir ~/pi_telegram_bot
 cd ~/pi_telegram_bot
 ```
 
-## Create modules and config
+## Create main.py, modules and config
 
-Place the `modules` folder with `temperature_monitor.py, system_monitor.py, command_executor.py` and the `config` folder with `config.py` inside `pi_telegram_bot`.  
+Place `main.py` , `modules` folder with `temperature_monitor.py, system_monitor.py, command_executor.py` and the `config` folder with `config.py` inside `pi_telegram_bot`.  
   
 ## Configuration
 
