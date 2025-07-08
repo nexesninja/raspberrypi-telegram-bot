@@ -9,6 +9,13 @@ mkdir ~/pi_telegram_bot
 cd ~/pi_telegram_bot
 ```
 
+##Install Requirements
+Download or create file `requirements.txt` and copy the details in `requirements.txt` in repo to file.  
+Then run the following command.  
+```bash
+pip install -r requirements.txt
+```
+  
 ## Create main.py, modules and config
 
 Place `main.py` , `modules` folder with `temperature_monitor.py, system_monitor.py, command_executor.py` and the `config` folder with `config.py` inside `pi_telegram_bot`.  
@@ -29,12 +36,22 @@ AUTHORIZED_USERS = [
 ## Create Empty init.py Files
 
 ```bash
-bash
 touch modules/__init__.py
 touch config/__init__.py
 
 ```
 
+## Create bot.log
+
+```bash
+mkdir logs
+touch logs/bot.log
+```
+To provide writing permissions, use following command.
+```bash
+chmod 644 logs/bot.log
+```
+  
 ## Test Installation
 
 ```bash
