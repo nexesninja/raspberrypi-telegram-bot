@@ -74,9 +74,12 @@ python3 -m venv venv
 # Activate virtual environment
 source venv/bin/activate
 ```
-### 📦 Install Required Packages
+## Install Requirements
+Download or create file `requirements.txt` and copy the details in `requirements.txt` in repo to file.  
+Then run the following command.  
+  
 ```bash
-pip install python-telegram-bot
+pip install -r requirements.txt
 ```
   
 You're now ready to start building your Telegram bot!
