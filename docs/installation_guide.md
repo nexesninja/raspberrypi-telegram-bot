@@ -1,20 +1,6 @@
 This guide explains how to set up the bot-functions of your Raspberry Pi Telegram Bot. All commands are intended to be run via SSH. If you're using the Raspberry Pi GUI, you can follow the same steps in a terminal window.<br/>
 
 Also you can download and place the files from this repository to rpi directly.
-
-## Create project directory
-
-```bash
-mkdir ~/pi_telegram_bot
-cd ~/pi_telegram_bot
-```
-
-## Install Requirements
-Download or create file `requirements.txt` and copy the details in `requirements.txt` in repo to file.  
-Then run the following command.  
-```bash
-pip install -r requirements.txt
-```
   
 ## Create main.py, modules and config
 
