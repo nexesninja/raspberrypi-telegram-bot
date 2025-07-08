@@ -9,7 +9,7 @@ mkdir ~/pi_telegram_bot
 cd ~/pi_telegram_bot
 ```
 
-##Install Requirements
+## Install Requirements
 Download or create file `requirements.txt` and copy the details in `requirements.txt` in repo to file.  
 Then run the following command.  
 ```bash
