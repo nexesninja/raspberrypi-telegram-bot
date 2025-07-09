@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=pi
 WorkingDirectory=/home/pi/pi_telegram_bot
-Environment=PATH=/home/ctrl/pi_telegram_bot/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Environment=PATH=/home/pi/pi_telegram_bot/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ExecStart=/home/pi/pi_telegram_bot/venv/bin/python main.py
 Restart=always
 RestartSec=30
