@@ -7,9 +7,9 @@
 
 A fully functional Telegram bot for Raspberry Pi (rpi) with features like:
 
-- 🌡️ Temperature Monitoring  
-- 📊 System Monitoring  
-- 💻 Remote Command Execution  
+- 🌡️ Temperature Monitoring
+- 📊 System Monitoring
+- 💻 Remote Command Execution
 - 🔧 More features coming soon!
 
 I’m using SSH to connect to my rpi from a computer (no display required).
@@ -24,29 +24,44 @@ Before continuing, please complete the the prerequisites:
 
 👉 The complete file can be found from [here](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/docs/prerequisites.md).
 
+## 🔒 Security Highlights
+
+- **User Authorization:**   Only whitelisted Telegram user IDs can access the bot.
+- **Command Whitelist:**   Only predefined safe commands can be executed.
+- **Input Validation:**   Commands are parsed and validated before execution.
+- **Command Injection Protection:**   Blocks dangerous patterns and injection attempts.
+- **Timeout Protection:**   Commands timeout after 30 seconds.
+- **Restricted Environment:**   Commands run with limited PATH and safe working directory.
+  
 ## 📁 Project Modules
 
 ### 🌡️ Temperature Monitoring
+This module allows you to check the RPi's temperature using the Telegram bot.
 
-This module allows you to check the RPi's temperature using the Telegram bot. Access full document at [doc_temp](https://github.com/nexesninja/raspberrypi-telegram-bot/blob/main/docs/doc_temp.md#check-temperature).
+### 📊 System Monitoring
+`/system` and `/status` provide CPU, RAM, Disk usage info.
+
+### 💻 Remote Command Execution
+Run whitelisted shell commands safely via `/cmd <command>`.
 
 ## 🗂️ Commands
 
-| Command | Description                        |
-|---------|------------------------------------|
-| `/temp` | Check Raspberry Pi temperature     |
-| `/help`  | Help message with Available Commands |
+| Command | Description |
+| --- | --- |
+| `/start` | Welcome message |
+| `/temp` | Check Raspberry Pi temperature |
+| `/system` | Full system status |
+| `/status` | Quick overview |
+| `/cmd <cmd>` | Execute whitelisted shell command |
+| `/help` | List available commands |
 
 More features coming soon!
 
 ## 📌 Roadmap
 
-
-- [x] Temperature Monitoring
-- [ ]  CPU & Memory Usage Display
-- [ ] Run Custom Shell Commands
-
-
+- [x]  Temperature Monitoring
+- [x]  CPU & Memory Usage Display
+- [x]  Run Custom Shell Commands
 
 <hr>
 
