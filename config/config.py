@@ -7,7 +7,7 @@ BOT_TOKEN = os.getenv('BOT_TOKEN', 'YOUR_BOT_TOKEN_HERE')
 
 # Security: List of authorized user IDs (get from @userinfobot)
 AUTHORIZED_USERS: List[int] = [
-    # 123456789,  # Replace with your Telegram user ID
+123456789,  # Replace with your Telegram user ID
 ]
 
 # Command whitelist for security
