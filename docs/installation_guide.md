@@ -6,6 +6,8 @@ Also you can download and place the files from this repository to rpi directly.
 
 Place `main.py` , `modules` folder with `temperature_monitor.py, system_monitor.py, command_executor.py` and the `config` folder with `config.py` inside `pi_telegram_bot`.  
   
+*In `command_executor.py`, change `pi` in `cwd='/home/pi'` to your actual username.*
+
 ## Configuration
 
 Edit `config/config.py` and replace with your actual bot token and telegram user ID. (You can add multiple IDs)
